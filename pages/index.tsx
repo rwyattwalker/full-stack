@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import Navbar from '../components/navbar'
+import Service from '../components/service'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -35,8 +36,16 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <section className='h-[100vh]'>
-        Our Services
+      <section className='min-h-[50vh] bg-red-200 flex flex-col'>
+        <div className='bg-blue-200 h-fit my-auto mx-44 flex gap-4 justify-center'>
+          <Service />
+          <Service />
+          <Service />
+          <Service />
+        </div>
+      </section>
+      <section className='h-[100vh] bg-blue-200'>
+        Contact
       </section>
     </>
   )
