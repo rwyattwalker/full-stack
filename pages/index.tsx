@@ -36,12 +36,17 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <section className='min-h-[50vh] bg-red-200 flex flex-col'>
-        <div className='bg-blue-200 h-fit my-auto mx-44 flex gap-4 justify-center'>
-          <Service />
-          <Service />
-          <Service />
-          <Service />
+      <section className='min-h-[50vh] h-fit bg-red-200 flex flex-col'>
+       
+        <div className='bg-blue-200 h-fit my-auto mx-44 flex gap-4 justify-center'> 
+        <div className='flex flex-col w-1/5 justify-center text-left'>
+          <h1 className="font-bold text-3xl underline">Services</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto ea rerum minus est. Magni exercitationem, voluptates expedita sed nam quibusdam sunt unde dignissimos molestias ratione eligendi quia hic suscipit provident.</p>
+        </div>
+          <Service name={"Design"} />
+          <Service name={"Develop"} />
+          <Service name={"Optimize"} />
+          <Service name={"Deploy"} />
         </div>
       </section>
       <section className='h-[100vh] bg-blue-200'>
