@@ -2,12 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+
+html{
+  font-family: 'Montserrat', sans-serif;
+}
 .main-title{
   color: white;
   text-transform: uppercase;
+  font-weight: 900;
   text-shadow: 0 5px 10px rgba(0,0,0,1);
   mix-blend-mode: overlay;
   font-size: 10em;
-  line-height: 1em;
+  line-height: 0.9em;
   text-align: left;
 }
