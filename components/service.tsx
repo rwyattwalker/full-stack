@@ -8,9 +8,9 @@ import {BiWorld} from 'react-icons/bi'
   }
 function Service({name}:serviceProps) {
   return (
-    <div className='h-96 w-80 bg-white flex flex-col my-4 text-center rounded-md'>
+    <div className='h-96 w-80 bg-[#222222] text-blue-200 flex flex-col my-4 text-center rounded-md'>
       <div className='my-auto mx-4 flex flex-col align-middle justify-center text-center'>
-        <h1 className='font-semibold text-lg'>{name} &nbsp;
+        <h1 className='font-semibold text-2xl'>{name} &nbsp;
           {name == "Design" &&
             <GiPencilBrush className='inline'/>
           }
