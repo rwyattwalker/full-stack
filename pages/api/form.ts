@@ -23,7 +23,7 @@ export default function handler(
      transporter.sendMail({
       from: 'fullstaksolutions@outlook.com',
       to: 'rwyattwalker@gmail.com',
-      subject: 'Test',
+      subject: 'Test-2',
       text: `
         Name: ${req.body.fname} ${req.body.lname}, 
         Country: ${req.body.country}, 
