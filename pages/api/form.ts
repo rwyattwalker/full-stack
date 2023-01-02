@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import nodemailer from 'nodemailer';
+const nodemailer = require("nodemailer");
 
 type Data = {
   success: boolean
@@ -19,7 +19,7 @@ export default function handler(
 ) {
   if(req.method === "POST"){
      console.log(req.body)
-     res.status(200).json({success:true})
+     
      transporter.sendMail({
       from: 'fullstaksolutions@outlook.com',
       to: 'rwyattwalker@gmail.com',
@@ -32,11 +32,12 @@ export default function handler(
         Phone: ${req.body.phone}, 
         Message: ${req.body.message}, 
         Preferred Contact Method: ${req.body.fav_contact}`
-     }, (err, info) => {
+     }, (err:any, info:any) => {
       if(err){
         console.log(err);
       }else{
         console.log('Sent', info.response)
+        res.status(200).json({success:true})
       }
 })
   }
