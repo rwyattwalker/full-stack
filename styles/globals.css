@@ -16,3 +16,29 @@ html{
   line-height: 0.9em;
   text-align: left;
 }
+@media  screen and (max-width:1800px) {
+  .main-title{
+    font-size:8em;
+    line-height: 0.9em;
+  }
+}
+@media  screen and (max-width:1500px) {
+  .main-title{
+    font-size:7em;
+    line-height: 0.9em;
+  }
+}
+@media  screen and (max-width:767px) {
+  .main-title{
+    text-align: center;
+    font-size:3em;
+    line-height: normal;
+  }
+}
+@media  screen and (max-width:500px) {
+  .main-title{
+    text-align: center;
+    font-size:2em;
+    line-height: normal;
+  }
+}

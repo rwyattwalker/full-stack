@@ -47,15 +47,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="h-[100vh] flex ">
-        <div className='my-24 mx-[23rem] flex flex-col'>
-          <Navbar />
-          <div className='flex h-full'>
-            <div className='stroke flex flex-col my-auto main-title'>
+        <div className='xl:my-24 2xl:mx-[20rem] xl:mx-[12rem] lg:mx-[10rem] md:my-20 md:mx-[2rem] flex flex-col'>
+          <Navbar hamburger={true}/>
+          <div className='flex flex-col-reverse  md:flex-row h-full justify-center'>
+            <div className='flex gap-3 md:flex-col lg:my-auto main-title justify-center'>
               <div>WEB</div>
               <div>MADE</div>
               <div>SIMPLE</div>
             </div>
-            <div className="my-auto w-1/3 ml-auto">
+            <div className="md:my-auto w-1/2 md:w-1/3 mx-auto md:mr-0">
               <Image
                 className=""
                 src="/robot.png"
@@ -70,8 +70,8 @@ export default function Home() {
       </main>
       <section className='min-h-[50vh] h-fit bg-gradient-to-b from-transparent to-blue-800 flex flex-col'>
        
-        <div className=' h-fit my-auto mx-44 flex gap-4 justify-center text-white'> 
-        <div className='flex flex-col w-1/5 justify-center text-left'>
+        <div className=' h-fit my-auto mx-a lg:mx-44 flex flex-col lg:flex-row gap-4 justify-center text-white'> 
+        <div className='w-80 flex flex-col my-4 text-center rounded-md mx-auto lg:mx-0'>
           <h1 className="font-bold text-3xl underline">Services</h1>
           <p>We offer a full range of services to take your website or app from an idea, to fruition.
           </p>
@@ -82,8 +82,8 @@ export default function Home() {
           <Service name={"Deploy"} />
         </div>
       </section>
-      <section className='h-[60vh] bg-blue-800 relative'>
-        <div className=' bg-blue-200 absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] w-[90%] lg:w-[60%]'>
+      <section className='h-fit bg-blue-800 flex justify-center'>
+        <div className=' bg-blue-200 w-[80%] lg:w-[60%] h-fit my-5'>
           <form className='flex flex-col m-12 gap-4' onSubmit={handleSubmit}>
           {formRes && formRes.success == true && 
             <div className='h-[391px] flex'>
@@ -107,18 +107,18 @@ export default function Home() {
           {formRes == null &&
           <>
             <h1 className='font-bold text-3xl'>Let&apos;s Work Together</h1>
-            <div className='flex gap-4'>
-              <input type="text" id="fname" onChange={(e)=>handleChange(e,"fname")} name="fname" placeholder=" First Name" className="w-1/3 h-10 rounded-sm"/>
-              <input type="text" id="lname" onChange={(e)=>handleChange(e,"lname")} name="lname" placeholder=" Last Name" className="w-1/3 h-10 rounded-sm"/>
-              <input type="text" id="country" onChange={(e)=>handleChange(e,"country")} name="country" placeholder=" Country" className="w-1/3 h-10 rounded-sm"/>
+            <div className='flex flex-col lg:flex-row gap-4'>
+              <input type="text" id="fname" onChange={(e)=>handleChange(e,"fname")} name="fname" placeholder=" First Name" className="lg:w-1/3 h-10 rounded-sm"/>
+              <input type="text" id="lname" onChange={(e)=>handleChange(e,"lname")} name="lname" placeholder=" Last Name" className="lg:w-1/3 h-10 rounded-sm"/>
+              <input type="text" id="country" onChange={(e)=>handleChange(e,"country")} name="country" placeholder=" Country" className="lg:w-1/3 h-10 rounded-sm"/>
             </div>
-            <div className='flex gap-4'>
-              <input type="text" id="cname" onChange={(e)=>handleChange(e,"cname")} name="cname" placeholder=" Company Name" className="w-1/3  h-10 rounded-sm"/>
-              <input type="text" id="email" onChange={(e)=>handleChange(e,"email")} name="email" placeholder=" Email" className="w-1/3 h-10 rounded-sm"/>
-              <input type="text" id="phone" onChange={(e)=>handleChange(e,"phone")} name="phone" placeholder=" Phone" className="w-1/3 h-10 rounded-sm"/>
+            <div className='flex flex-col lg:flex-row gap-4'>
+              <input type="text" id="cname" onChange={(e)=>handleChange(e,"cname")} name="cname" placeholder=" Company Name" className="lg:w-1/3  h-10 rounded-sm"/>
+              <input type="text" id="email" onChange={(e)=>handleChange(e,"email")} name="email" placeholder=" Email" className="lg:w-1/3 h-10 rounded-sm"/>
+              <input type="text" id="phone" onChange={(e)=>handleChange(e,"phone")} name="phone" placeholder=" Phone" className="lg:w-1/3 h-10 rounded-sm"/>
             </div>
             
-            <textarea rows={6} cols={3} id="message" onChange={(e)=>handleChange(e,"message")} name="message" className='rounded-sm p-2' placeholder="Please leave a brief description of what you are looking to create, we will be in touch within 24 hours via your preferred contact method." />
+            <textarea rows={6} cols={3} id="message" onChange={(e)=>handleChange(e,"message")} name="message" className='rounded-sm p-2' placeholder="Message" />
             <div className='flex'>
               Preferred Contact Method:&nbsp;
               <input type="radio" id="via_email" onChange={(e)=>handleChange(e,"preferredContact")} value="email" name="fav_contact" />
@@ -126,7 +126,7 @@ export default function Home() {
               <input type="radio" id="via_phone" onChange={(e)=>handleChange(e,"preferredContact")} value="phone" name="fav_contact" />
               <label htmlFor="via_phone" className='mx-1'>Phone</label>
             </div>
-            <button type="submit" className='py-2 px-4 bg-blue-700 w-44 text-white font-bold rounded-sm'>Submit</button>
+            <button type="submit" className='py-2 px-4 bg-blue-700 lg:w-44 text-white font-bold rounded-sm'>Submit</button>
             </>
           }
 
