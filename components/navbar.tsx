@@ -8,7 +8,7 @@ type propTypes = {
 }
 
 function Navbar({hamburger}:propTypes) {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const handleToggle = () => {
     if(open){
       setOpen(false)

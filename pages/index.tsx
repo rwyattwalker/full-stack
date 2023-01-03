@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import Navbar from '../components/navbar'
 import Service from '../components/service'
-import { useState } from 'react'
+import { use, useEffect, useState } from 'react'
 
 type formResType = {
   success: boolean
@@ -20,6 +20,7 @@ export default function Home() {
     preferredContact:'',
     message:''
   })
+  
   const [formRes, setFormRes] = useState<formResType|null>(null);
   const handleChange = (e:any, value:any) => {
     let current:any = formState;
@@ -61,7 +62,7 @@ export default function Home() {
               <div>SIMPLE</div>
             </div>
             <div className="md:my-auto w-1/2 md:w-1/3 mx-auto md:mr-0">
-              <Image
+                <Image
                 className=""
                 src="/robot.png"
                 alt="Cute Robot"
@@ -76,7 +77,7 @@ export default function Home() {
       <section className='min-h-[50vh] h-fit bg-gradient-to-b from-transparent to-blue-800 flex flex-col'>
        
         <div className=' h-fit my-auto md:mx-20 lg:mx-44 flex flex-col flex-wrap xl:flex-nowrap md:flex-row lg:gap-4 justify-center text-white'> 
-        <div className='w-80 flex flex-col my-4 text-center rounded-md mx-auto lg:mx-0'>
+        <div className='w-80 flex flex-col mt-20 text-center rounded-md mx-auto lg:mx-0'>
           <h1 className="font-bold text-3xl underline">Services</h1>
           <p>We offer a full range of services to take your website or app from an idea, to fruition.
           </p>
@@ -92,18 +93,17 @@ export default function Home() {
       <section className='h-fit bg-blue-800 flex justify-center'>
         <div className=' bg-blue-200 w-[80%] lg:w-[60%] h-fit my-5'>
           <form className='flex flex-col m-12 gap-4' onSubmit={handleSubmit}>
-          {formRes && formRes.success == true && 
-            <div className='h-[391px] flex'>
+            {formRes && formRes.success == true && 
+            <div className='h-[391px] flex text-center md:text-left'>
               <div className='flex-col my-auto'>
-                <h1 className='mr-auto w-fit font-bold text-5xl mb-2'>Thank you!</h1>
+                <h1 className='mx-auto md:ml-0 w-fit font-bold text-5xl mb-2'>Thank you!</h1>
                 <h2 className='my-auto mx-auto w-fit font-bold relative mb-2'>
                 We have received your submission and are looking it over. We will reach out to you within 24 hours via your preferred contact method.
               </h2>
-              <button type="button" className='py-2 px-4 bg-blue-600 rounded-sm font-semibold' onClick={() =>setFormRes(null)}>Submit another message</button>
+              <button type="button" className='py-2 px-4 bg-blue-600 rounded-sm font-bold text-white' onClick={() =>setFormRes(null)}>Submit another message</button>
               </div>
                <Image 
-                className=""
-
+                className="hidden md:inline"
                 src="/robot-reading.png"
                 alt="Cute Robot"
                 width={250}
@@ -127,12 +127,16 @@ export default function Home() {
             </div>
             
             <textarea rows={6} cols={3} id="message" onChange={(e)=>handleChange(e,"message")} name="message" className='rounded-sm p-2' placeholder="Message" />
-            <div className='flex'>
+            <div className='flex flex-col sm:flex-row'>
               Preferred Contact Method:&nbsp;
-              <input type="radio" id="via_email" onChange={(e)=>handleChange(e,"preferredContact")} value="email" name="fav_contact" />
-              <label htmlFor="via_email" className='mx-1'>Email</label>
-              <input type="radio" id="via_phone" onChange={(e)=>handleChange(e,"preferredContact")} value="phone" name="fav_contact" />
-              <label htmlFor="via_phone" className='mx-1'>Phone</label>
+              <div className='flex'>
+                <input type="radio" id="via_email" onChange={(e)=>handleChange(e,"preferredContact")} value="email" name="fav_contact" />
+                <label htmlFor="via_email" className='mx-1'>Email</label>
+
+                <input type="radio" id="via_phone" onChange={(e)=>handleChange(e,"preferredContact")} value="phone" name="fav_contact" />
+                <label htmlFor="via_phone" className='mx-1'>Phone</label>
+              </div>
+             
             </div>
             <button type="submit" className='py-2 px-4 bg-blue-700 lg:w-44 text-white font-bold rounded-sm'>Submit</button>
             </>
