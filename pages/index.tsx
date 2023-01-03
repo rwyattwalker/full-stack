@@ -47,8 +47,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="h-[100vh] flex ">
-        <div className='xl:my-24 2xl:mx-[20rem] xl:mx-[12rem] lg:mx-[10rem] md:my-20 md:mx-[2rem] flex flex-col'>
-          <Navbar hamburger={true}/>
+        <div className='xl:my-24 2xl:mx-[20rem] xl:mx-[12rem] lg:mx-[10rem] md:my-20 sm:mt-10 sm:mx-[2rem] flex flex-col'>
+          <div className='hidden sm:inline'>
+            <Navbar hamburger={false}/>
+          </div>
+          <div className='sm:hidden'>
+            <Navbar hamburger={true}/>
+          </div>
           <div className='flex flex-col-reverse  md:flex-row h-full justify-center'>
             <div className='flex gap-3 md:flex-col lg:my-auto main-title justify-center'>
               <div>WEB</div>
@@ -70,14 +75,16 @@ export default function Home() {
       </main>
       <section className='min-h-[50vh] h-fit bg-gradient-to-b from-transparent to-blue-800 flex flex-col'>
        
-        <div className=' h-fit my-auto mx-a lg:mx-44 flex flex-col lg:flex-row gap-4 justify-center text-white'> 
+        <div className=' h-fit my-auto md:mx-20 lg:mx-44 flex flex-col flex-wrap xl:flex-nowrap md:flex-row lg:gap-4 justify-center text-white'> 
         <div className='w-80 flex flex-col my-4 text-center rounded-md mx-auto lg:mx-0'>
           <h1 className="font-bold text-3xl underline">Services</h1>
           <p>We offer a full range of services to take your website or app from an idea, to fruition.
           </p>
         </div>
+        <div className='md:basis-[100%] xl:hidden'></div>
           <Service name={"Design"} />
           <Service name={"Develop"} />
+        <div className='md:basis-[100%] xl:hidden'></div>
           <Service name={"Optimize"} />
           <Service name={"Deploy"} />
         </div>
@@ -96,6 +103,7 @@ export default function Home() {
               </div>
                <Image 
                 className=""
+
                 src="/robot-reading.png"
                 alt="Cute Robot"
                 width={250}
