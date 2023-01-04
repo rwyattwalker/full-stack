@@ -41,10 +41,10 @@ export default function Home() {
     setFormRes(json)
   }
   return (
-    <div className='bg-gradient-to-r from-blue-400 to-blue-800'>
+    <div className=''>
       <Head>
         <title>Full Stack Solutions</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1 viewport-fit=cover" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="h-[100vh] flex ">
