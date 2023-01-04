@@ -44,7 +44,7 @@ export default function Home() {
     <div className='bg-gradient-to-r from-blue-400 to-blue-800'>
       <Head>
         <title>Full Stack Solutions</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1 viewport-fit=cover" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="h-[100vh] flex ">
