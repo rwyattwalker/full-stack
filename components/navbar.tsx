@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect } from 'react'
 import {GiHamburgerMenu} from "react-icons/gi"
 import {useState} from "react"
 
@@ -9,6 +9,10 @@ type propTypes = {
 
 function Navbar({hamburger}:propTypes) {
   const [open, setOpen] = useState(false);
+  const [viewportHeight, setViewportHeight] = useState<null | number>(null);
+  useEffect(()=>{
+    setViewportHeight(window.innerHeight)
+  },[])
   const handleToggle = () => {
     if(open){
       setOpen(false)
@@ -20,8 +24,9 @@ function Navbar({hamburger}:propTypes) {
     <div className='w-100  font-bold text-lg text-white bg-transparent flex justify-between -mb-8'>
       <div className='hover:cursor-pointer hover:underline my-auto'>Logo</div>
       <div className='flex gap-8'>
-        <Link href={"/"} className="my-auto">About</Link>
-        <Link href={"/"} className="my-auto">Services</Link>
+        <Link href={"/about"} className="my-auto">About</Link>
+        <button onClick={()=>{window.scrollTo({top:viewportHeight!})}} className="my-auto">Services</button>
+        {/* <Link href={"#services"} className="my-auto">Portfolio</Link> */}
         <Link href={"/"} className="bg-white text-blue-500 font-bold py-2 px-4">Get a Quote</Link>
       </div>
     </div>
@@ -33,7 +38,7 @@ function Navbar({hamburger}:propTypes) {
       {open &&
         <div className='flex flex-col z-20 absolute top-0 w-full h-fit bg-white'>
           <Link href={"/"} className=" my-auto text-blue-500 font-bold py-2 px-4">About</Link>
-          <Link href={"/"} className=  "my-auto text-blue-500 font-bold py-2 px-4">Services</Link>
+          <button onClick={()=>{window.scrollTo({top:viewportHeight!})}} className="my-auto text-blue-500 font-bold py-2 px-4 w-fit">Services</button>
           <Link href={"/"} className=" text-blue-500 font-bold py-2 px-4">Get a Quote</Link>
         </div>
       }
