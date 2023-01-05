@@ -59,7 +59,7 @@ export default function Home() {
           <div className='sm:hidden'>
             <Navbar hamburger={true}/>
           </div>
-          <div className='flex flex-col-reverse  md:flex-row h-full justify-center'>
+          <div className='flex flex-col-reverse  md:flex-row h-full justify-center pointer-events-none'>
             <div className='flex gap-3 md:flex-col lg:my-auto main-title justify-center'>
               <div>WEB</div>
               <div>MADE</div>
@@ -78,9 +78,9 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <section className='min-h-[50vh] h-fit bg-gradient-to-b from-transparent to-blue-800 flex flex-col'>
+      <section className='min-h-[50vh] h-fit bg-gradient-to-b from-transparent to-blue-800 flex flex-col'  id="services">
        
-        <div className=' h-fit my-auto md:mx-20 lg:mx-44 flex flex-col flex-wrap xl:flex-nowrap md:flex-row lg:gap-4 justify-center text-white' id="services"> 
+        <div className=' h-fit my-auto md:mx-20 lg:mx-44 flex flex-col flex-wrap xl:flex-nowrap md:flex-row lg:gap-4 justify-center text-white'> 
         <div className='w-80 flex flex-col mt-16 text-center rounded-md mx-auto lg:mx-0'>
           <h1 className="font-bold text-3xl underline">Services</h1>
           <p className='text-lg'>We offer a full range of services to take your website or app from an idea to fruition. Wether you need one or all of the services we provide, if it&apos;s on the web, we&apos;ve got you covered. 
@@ -96,7 +96,7 @@ export default function Home() {
       </section>
       <section className='h-fit bg-blue-800 flex justify-center'>
         <div className=' bg-blue-200 w-[80%] lg:w-[60%] h-fit my-5'>
-          <form className='flex flex-col m-12 gap-4' onSubmit={handleSubmit}>
+          <form id="#form" className='flex flex-col m-12 gap-4' onSubmit={handleSubmit}>
             {loading &&
             <div className='h-[391px] flex'>
               <div className='flex my-auto mx-auto'>
@@ -150,11 +150,12 @@ export default function Home() {
               </div>
              
             </div>
-            <button type="submit" className='py-2 px-4 bg-blue-700 lg:w-44 text-white font-bold rounded-sm'>Submit</button>
+            <button  type="submit" className='py-2 px-4 bg-blue-700 lg:w-44 text-white font-bold rounded-sm'>Submit</button>
             </>
           }
 
           </form>
+          <div id="form" className='w-full bg-transparent'></div>
         </div>
       </section>
     </div>

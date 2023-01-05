@@ -4,10 +4,11 @@ import {GiHamburgerMenu} from "react-icons/gi"
 import {useState} from "react"
 
 type propTypes = {
-  hamburger: boolean
+  hamburger: boolean,
+  about?: boolean
 }
 
-function Navbar({hamburger}:propTypes) {
+function Navbar({hamburger, about}:propTypes) {
   const [open, setOpen] = useState(false);
   const [viewportHeight, setViewportHeight] = useState<null | number>(null);
   useEffect(()=>{
@@ -21,25 +22,29 @@ function Navbar({hamburger}:propTypes) {
     }
   }
   if(!hamburger)return(
-    <div className='w-100  font-bold text-lg text-white bg-transparent flex justify-between -mb-8'>
+    <div className='w-100  font-bold text-lg text-white bg-transparent flex justify-between z-[50000] pointer-events-auto'>
       <div className='hover:cursor-pointer hover:underline my-auto'>Logo</div>
       <div className='flex gap-8'>
-        <Link href={"/about"} className="my-auto">About</Link>
-        <button onClick={()=>{window.scrollTo({top:viewportHeight!})}} className="my-auto">Services</button>
+        <Link href={"/about"} className="my-auto cursor-pointer">About</Link>
+        {about && <Link href={"/#services"} className="my-auto cursor-pointer scroll-smooth">Services</Link>}
+        {!about && <button onClick={()=>{window.scrollTo({top:viewportHeight!, behavior:"smooth"})}} className="my-auto cursor-pointer">Services</button>}
         {/* <Link href={"#services"} className="my-auto">Portfolio</Link> */}
-        <Link href={"/"} className="bg-white text-blue-500 font-bold py-2 px-4">Get a Quote</Link>
+        {about && <Link href={"/#form"} className="bg-white text-blue-500 font-bold py-2 px-4 cursor-pointer">Get a Quote</Link>}
+        {!about && <button className="bg-white text-blue-500 font-bold py-2 px-4 cursor-pointer" onClick={()=>{window.scrollTo({top:viewportHeight! + 100, behavior:'smooth'})}}>Get a Quote</button>}
       </div>
     </div>
   )
   else return(
-    <div className='w-100  font-bold text-lg text-white bg-transparent flex justify-between -mb-8'>
+    <div className='w-100  font-bold text-lg text-white bg-transparent flex justify-between'>
       <div className='hover:cursor-pointer hover:underline my-auto'>Logo</div>
       <GiHamburgerMenu className={`text-3xl z-50 m-5 ${open && 'text-blue-500'}`} onClick={handleToggle}/>
       {open &&
         <div className='flex flex-col z-20 absolute top-0 w-full h-fit bg-white'>
-          <Link href={"/"} className=" my-auto text-blue-500 font-bold py-2 px-4">About</Link>
-          <button onClick={()=>{window.scrollTo({top:viewportHeight!})}} className="my-auto text-blue-500 font-bold py-2 px-4 w-fit">Services</button>
-          <Link href={"/"} className=" text-blue-500 font-bold py-2 px-4">Get a Quote</Link>
+          <Link href={"/about"} className=" my-auto text-blue-500 font-bold py-2 px-4">About</Link>
+          {!about && <button onClick={()=>{window.scrollTo({top:viewportHeight!, behavior:"smooth"})}} className="my-auto text-blue-500 font-bold py-2 px-4 w-fit">Services</button>}
+          {about && <Link href={"/#services"} className="my-auto text-blue-500 font-bold py-2 px-4 w-fit">Services</Link>}
+          {!about && <button onClick={()=>window.scrollTo({top:viewportHeight! + 2000, behavior:"smooth"})} className=" text-blue-500 font-bold py-2 px-4 w-fit">Get a Quote</button>}
+          {about && <Link href={"/#form"} className=" text-blue-500 font-bold py-2 px-4">Get a Quote</Link>}
         </div>
       }
     </div>

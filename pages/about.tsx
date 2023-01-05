@@ -1,23 +1,21 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import Image from 'next/image'
+import Navbar from '../components/navbar'
 
-const Layout = styled.div`
-  padding: 8em;
+const Container = styled.div`
+  display:flex;
+  justify-content:center;
   min-height: 100vh;
-  @media (max-width: 1200px){
-   padding: 5em; 
-  }
-  @media (max-width: 800px){
-    padding: 1em;
-  }
+  min-width: 100vw;
+ 
 `
 const Flex = styled.div`
   display: flex;
+  margin-top:1em;
   gap:1em;
   justify-content: center;
   align-items: center;
-  height:100%;
   @media (max-width: 800px){
     flex-direction: column-reverse;
   }
@@ -27,7 +25,6 @@ const ImageContainer = styled.div`
   justify-content:center;
 `
 const Col = styled.div` 
-  height:100%;
   display:flex;
   flex-direction: column;
   color:white;
@@ -41,28 +38,35 @@ const Col = styled.div`
 
 function about() {
   return (
-      <Layout>
-        <Flex>
-          <Col>
-            <h1 className='font-bold text-2xl'>Wyatt Walker | Founder & Lead Developer</h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis illo inventore ad distinctio, saepe incidunt sunt animi blanditiis accusamus magnam eos aperiam earum nesciunt delectus numquam consequatur repellendus eligendi. Totam.</p>
-          </Col>      
-          <Col>
-            
-            <ImageContainer>
-              <Image
-                src="/headshot.jpeg"
-                width={400}
-                height={800}
-                alt="Headshot"
-                objectFit='contain'
-                className='border-2 border-green-200 rounded my-auto'
-                />
-            </ImageContainer>
-          </Col>
-        
-        </Flex>
-      </Layout>
+    <Container>
+        <div className='flex flex-col w-[800px] my-auto'>
+          <div className='hidden sm:inline'>
+            <Navbar hamburger={false} about/>
+          </div>
+          <div className='sm:hidden'>
+            <Navbar hamburger={true} about/>
+          </div>
+          <Flex>
+            <Col>
+              <h1 className='font-bold text-2xl'>Wyatt Walker | Founder & Lead Developer</h1>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis illo inventore ad distinctio, saepe incidunt sunt animi blanditiis accusamus magnam eos aperiam earum nesciunt delectus numquam consequatur repellendus eligendi. Totam.</p>
+            </Col>      
+            <Col>
+              
+              <ImageContainer>
+                <Image
+                  src="/headshot.jpeg"
+                  width={400}
+                  height={800}
+                  alt="Headshot"
+                  objectFit='contain'
+                  className='border-2 border-green-200 rounded my-auto'
+                  />
+              </ImageContainer>
+            </Col>
+          
+          </Flex>
+        </div> </Container>
   )
 }
 
