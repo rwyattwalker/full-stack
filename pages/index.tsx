@@ -47,7 +47,7 @@ export default function Home() {
   return (
     <div className=''>
       <Head>
-        <title>Web Services | Full Stack Solutions</title>
+        <title>Web Services | Evolve</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -60,10 +60,9 @@ export default function Home() {
             <Navbar hamburger={true}/>
           </div>
           <div className='flex flex-col-reverse  md:flex-row h-full justify-center pointer-events-none'>
-            <div className='flex gap-3 md:flex-col lg:my-auto main-title justify-center'>
-              <div>WEB</div>
-              <div>MADE</div>
-              <div>SIMPLE</div>
+            <div className='flex flex-col gap-3 md:flex-col lg:my-auto main-title justify-center'>
+              <div>EVOLVE</div>
+              <div className='text-lg mx-auto'>Design, Software Development, SEO</div>
             </div>
             <div className="md:my-auto w-1/2 md:w-1/3 mx-auto md:mr-0">
                 <Image
@@ -126,7 +125,7 @@ export default function Home() {
           }
           {formRes == null && !loading &&
           <>
-            <h1 className='font-bold text-3xl'>Let&apos;s Work Together</h1>
+            <h1 className='font-bold text-3xl'>Ready to Evolve?</h1>
             <div className='flex flex-col lg:flex-row gap-4'>
               <input type="text" id="fname" onChange={(e)=>handleChange(e,"fname")} name="fname" placeholder=" First Name" className="lg:w-1/3 h-10 rounded-sm"/>
               <input type="text" id="lname" onChange={(e)=>handleChange(e,"lname")} name="lname" placeholder=" Last Name" className="lg:w-1/3 h-10 rounded-sm"/>

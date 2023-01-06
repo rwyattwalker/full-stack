@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React, { useEffect } from 'react'
 import {GiHamburgerMenu} from "react-icons/gi"
 import {useState} from "react"
+import Image from "next/image"
 
 type propTypes = {
   hamburger: boolean,
@@ -23,7 +24,9 @@ function Navbar({hamburger, about}:propTypes) {
   }
   if(!hamburger)return(
     <div className='w-100  font-bold text-lg text-white bg-transparent flex justify-between z-[50000] pointer-events-auto'>
-      <div className='hover:cursor-pointer hover:underline my-auto'>Logo</div>
+      <Link className='hover:cursor-pointer my-auto' href={"/"}>
+        <Image src="/evolve-white.png" width={50} height={50} alt="logo" />
+      </Link>
       <div className='flex gap-8'>
         <Link href={"/about"} className="my-auto cursor-pointer">About</Link>
         {about && <Link href={"/#services"} className="my-auto cursor-pointer scroll-smooth">Services</Link>}
@@ -36,7 +39,9 @@ function Navbar({hamburger, about}:propTypes) {
   )
   else return(
     <div className='w-100  font-bold text-lg text-white bg-transparent flex justify-between'>
-      <div className='hover:cursor-pointer hover:underline my-auto'>Logo</div>
+      <Link className='hover:cursor-pointer my-auto mx-2' href={"/"}>
+        <Image src="/evolve-white.png" width={50} height={50} alt="logo" />
+      </Link>
       <GiHamburgerMenu className={`text-3xl z-50 m-5 ${open && 'text-blue-500'}`} onClick={handleToggle}/>
       {open &&
         <div className='flex flex-col z-20 absolute top-0 w-full h-fit bg-white'>
