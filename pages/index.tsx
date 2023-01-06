@@ -62,9 +62,9 @@ export default function Home() {
           <div className='flex flex-col-reverse  md:flex-row h-full justify-center pointer-events-none'>
             <div className='flex flex-col gap-3 md:flex-col lg:my-auto main-title justify-center'>
               <div>EVOLVE</div>
-              <div className='text-lg mx-auto'>Design, Software Development, SEO</div>
+              <div className='text-xl mx-auto'>Design, Development, SEO</div>
             </div>
-            <div className="md:my-auto w-1/2 md:w-1/3 mx-auto md:mr-0">
+            <div className="md:my-auto w-2/3 sm:w-1/2 md:w-1/3 mx-auto md:mr-0">
                 <Image
                 className=""
                 src="/robot.png"
