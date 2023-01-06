@@ -38,9 +38,10 @@ function Navbar({hamburger, about}:propTypes) {
     </div>
   )
   else return(
-    <div className='w-100  font-bold text-lg text-white bg-white flex justify-between'>
-      <Link className='hover:cursor-pointer my-auto mx-2' href={"/"}>
+    <div className='w-100  font-bold text-lg text-black bg-white flex justify-between'>
+      <Link className='hover:cursor-pointer my-auto mx-2 flex' href={"/"}>
         <Image src="/evolve-black.png" width={50} height={50} alt="logo" />
+        <div className='my-auto text-xl font-bold'>| Evolve</div>
       </Link>
       <GiHamburgerMenu className={`text-3xl z-50 m-5 ${open ? 'text-blue-500' : 'text-black'}`} onClick={handleToggle}/>
       {open &&
