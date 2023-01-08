@@ -8,7 +8,7 @@ export default function Document() {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="crossorigin" />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet" />
       </Head>
-      <body className='bg-gradient-to-r from-blue-400 to-blue-800'>
+      <body className='bg-[#E8E8E8]'>
         <Main />
         <NextScript />
       </body>

@@ -69,7 +69,7 @@ export default function Home() {
             <div className="md:my-auto w-2/3 sm:w-1/2 md:w-1/3 mx-auto md:mr-0">
                 <Image
                 className=""
-                src="/robot.png"
+                src="/computer-graphic.png"
                 alt="Cute Robot"
                 width={800}
                 height={800}
@@ -79,7 +79,7 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <section className='min-h-[50vh] h-fit bg-gradient-to-b from-transparent to-blue-800 flex flex-col'  id="services">
+      <section className='min-h-[50vh] h-fit bg-gradient-to-r from-[#7D8E8E] to-[#CED1CC] flex flex-col'  id="services">
        
         <div className=' h-fit my-auto md:mx-20 lg:mx-44 flex flex-col flex-wrap xl:flex-nowrap md:flex-row lg:gap-4 justify-center text-white'> 
         <div className='w-80 flex flex-col mt-16 text-center rounded-md mx-auto lg:mx-0'>
@@ -95,9 +95,9 @@ export default function Home() {
           <Service name={"Deploy"} />
         </div>
       </section>
-      <section className='h-fit bg-blue-800 flex justify-center'>
-        <div className=' bg-blue-200 w-[80%] lg:w-[60%] h-fit my-5'>
-          <form id="#form" className='flex flex-col m-12 gap-4' onSubmit={handleSubmit}>
+      <section className='h-fit bg-[#E8E8E8] flex justify-center'>
+        <div className=' bg-[#222222] w-[80%] lg:w-[60%] h-fit my-5'>
+          <form id="#form" className='flex flex-col m-12 gap-4 text-white' onSubmit={handleSubmit}>
             {loading &&
             <div className='h-[391px] flex'>
               <div className='flex my-auto mx-auto'>
@@ -127,7 +127,7 @@ export default function Home() {
           }
           {formRes == null && !loading &&
           <>
-            <h1 className='font-bold text-3xl'>Ready to Evolve?</h1>
+            <h1 className='font-bold text-3xl '>Ready to Evolve?</h1>
             <div className='flex flex-col lg:flex-row gap-4'>
               <input type="text" id="fname" onChange={(e)=>handleChange(e,"fname")} name="fname" placeholder=" First Name" className="lg:w-1/3 h-10 rounded-sm"/>
               <input type="text" id="lname" onChange={(e)=>handleChange(e,"lname")} name="lname" placeholder=" Last Name" className="lg:w-1/3 h-10 rounded-sm"/>

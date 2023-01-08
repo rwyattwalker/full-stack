@@ -33,7 +33,7 @@ function Navbar({hamburger, about}:propTypes) {
         {!about && <button onClick={()=>{window.scrollTo({top:viewportHeight!, behavior:"smooth"})}} className="my-auto cursor-pointer">Services</button>}
         {/* <Link href={"#services"} className="my-auto">Portfolio</Link> */}
         {about && <Link href={"/#form"} className="bg-white text-blue-500 font-bold py-2 px-4 cursor-pointer">Get a Quote</Link>}
-        {!about && <button className="bg-white text-blue-500 font-bold py-2 px-4 cursor-pointer" onClick={()=>{window.scrollTo({top:viewportHeight! + 100, behavior:'smooth'})}}>Get a Quote</button>}
+        {!about && <button className="bg-[#EB9B2F] text-white rounded-full font-bold py-2 px-4 cursor-pointer" onClick={()=>{window.scrollTo({top:viewportHeight! + 100, behavior:'smooth'})}}>Get a Quote</button>}
       </div>
     </div>
   )
@@ -50,7 +50,7 @@ function Navbar({hamburger, about}:propTypes) {
           {!about && <button onClick={()=>{window.scrollTo({top:viewportHeight!, behavior:"smooth"})}} className="my-auto text-blue-500 font-bold py-2 px-4 w-fit">Services</button>}
           {about && <Link href={"/#services"} className="my-auto text-blue-500 font-bold py-2 px-4 w-fit">Services</Link>}
           {!about && <button onClick={()=>window.scrollTo({top:viewportHeight! + 2000, behavior:"smooth"})} className=" text-blue-500 font-bold py-2 px-4 w-fit">Get a Quote</button>}
-          {about && <Link href={"/#form"} className=" text-blue-500 font-bold py-2 px-4">Get a Quote</Link>}
+          {about && <Link href={"/#form"} className="bg-[#EB9B2F] text-blue-500 font-bold py-2 px-4">Get a Quote</Link>}
         </div>
       }
     </div>
