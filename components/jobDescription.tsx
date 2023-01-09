@@ -10,7 +10,7 @@ type Props = {
 
 const JobDescription = ({title, description, requirements, link}:Props) => {
   return (
-    <div className="max-w-xl mx-auto p-6 bg-white rounded-lg shadow-xl absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%]">
+    <div className="max-w-xl mx-auto p-6 bg-white rounded-lg shadow-xl middle">
       <h1 className="text-3xl font-bold text-gray-900 mb-6">
         {title}
       </h1>

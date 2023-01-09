@@ -26,12 +26,9 @@ export default function handler(
       subject: 'Main Form',
       text: `
         Name: ${req.body.fname} ${req.body.lname}, 
-        Country: ${req.body.country}, 
-        Company: ${req.body.cname}, 
         Email: ${req.body.email}, 
-        Phone: ${req.body.phone}, 
-        Message: ${req.body.message}, 
-        Preferred Contact Method: ${req.body.fav_contact}`
+        Resume: ${req.body.resume}, 
+        Cover Letter: ${req.body.cover}`
      }, (err:any, info:any) => {
       if(err){
         console.log(err);
