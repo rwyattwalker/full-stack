@@ -1,5 +1,6 @@
 import React from "react"
 import {useState} from "react"
+import axios from "axios"
 
 type Props = {
   link: String | String[] | undefined
@@ -14,8 +15,6 @@ const JobApplicationForm = ({link}:Props) => {
   const [formState, setFormState] = useState({
     name:'',
     email:'',
-    resume:resume,
-    coverLetter:cover
   })
   const handleFileUpload = (value:any, file:File) => {
     let current:any = formState;
@@ -34,17 +33,15 @@ const JobApplicationForm = ({link}:Props) => {
   }
   async function handleSubmit(e:any) {
     e.preventDefault();
+    const formData = new FormData();
+    formData.append("Resume", resume! )
     setLoading(true)
-    const response = await fetch("/api/applicationForm", {
-      method: 'POST',
-      headers:{
-        'Content-Type': 'application/json'
-      },
-      body:JSON.stringify(formState)
-    });
-    const json = await response.json();
+    axios.post('/api/applicationForm', formData, {
+      headers: {
+        'Content-Type':'multipart/form-data'
+      }
+    })
     setLoading(false)
-    setFormRes(json)
   }
   return (
     <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-lg middle mt-20 sm:mt-0" onSubmit={handleSubmit}>
@@ -81,7 +78,7 @@ const JobApplicationForm = ({link}:Props) => {
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="resume"
           type="file"
-          onChange={(e)=>handleFileUpload("resume",e.target.files[0])} 
+          onChange={(e)=>setResume(e.target.files![0])} 
         />
       </div>
       <div className="mb-4">
