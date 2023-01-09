@@ -79,14 +79,14 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <section className='min-h-[50vh] h-fit bg-gradient-to-r from-[#7D8E8E] to-[#CED1CC] flex flex-col'  id="services">
+      <section className='min-h-[50vh] h-fit flex flex-col'  id="services">
        
         <div className=' h-fit my-auto md:mx-20 lg:mx-44 flex flex-col flex-wrap xl:flex-nowrap md:flex-row lg:gap-4 justify-center text-white'> 
-        <div className='w-80 flex flex-col mt-16 text-center rounded-md mx-auto lg:mx-0'>
+        {/* <div className='w-80 flex flex-col mt-16 text-center rounded-md mx-auto lg:mx-0'>
           <h1 className="font-bold text-3xl underline">Services</h1>
           <p className='text-lg'>We offer a full range of services to take your website or app from an idea to fruition. Wether you need one or all of the services we provide, if it&apos;s on the web, we&apos;ve got you covered. 
           </p>
-        </div>
+        </div> */}
         <div className='md:basis-[100%] xl:hidden'></div>
           <Service name={"Design"} />
           <Service name={"Develop"} />

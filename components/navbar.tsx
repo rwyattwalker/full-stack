@@ -28,7 +28,6 @@ function Navbar({hamburger, about}:propTypes) {
         <Image src="/evolve-white.png" width={50} height={50} alt="logo" />
       </Link>
       <div className='flex gap-8'>
-        <Link href={"/about"} className="my-auto cursor-pointer">About</Link>
         {about && <Link href={"/#services"} className="my-auto cursor-pointer scroll-smooth">Services</Link>}
         {!about && <button onClick={()=>{window.scrollTo({top:viewportHeight!, behavior:"smooth"})}} className="my-auto cursor-pointer">Services</button>}
         {/* <Link href={"#services"} className="my-auto">Portfolio</Link> */}
@@ -46,7 +45,6 @@ function Navbar({hamburger, about}:propTypes) {
       <GiHamburgerMenu className={`text-3xl z-50 m-5 ${open ? 'text-blue-500' : 'text-black'}`} onClick={handleToggle}/>
       {open &&
         <div className='flex flex-col z-20 absolute top-0 w-full h-fit bg-white'>
-          <Link href={"/about"} className=" my-auto text-blue-500 font-bold py-2 px-4">About</Link>
           {!about && <button onClick={()=>{window.scrollTo({top:viewportHeight!, behavior:"smooth"})}} className="my-auto text-blue-500 font-bold py-2 px-4 w-fit">Services</button>}
           {about && <Link href={"/#services"} className="my-auto text-blue-500 font-bold py-2 px-4 w-fit">Services</Link>}
           {!about && <button onClick={()=>window.scrollTo({top:viewportHeight! + 2000, behavior:"smooth"})} className=" text-blue-500 font-bold py-2 px-4 w-fit">Get a Quote</button>}

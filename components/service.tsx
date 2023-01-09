@@ -8,7 +8,7 @@ import {BiWorld} from 'react-icons/bi'
   }
 function Service({name}:serviceProps) {
   return (
-    <div className='h-96 w-80 bg-[#222222] text-blue-100 flex flex-col my-4 text-center rounded-md mx-auto lg:mx-0'>
+    <div className='h-96 w-80 bg-[#222222] text-blue-100 flex flex-col my-4 text-center rounded-md mx-auto lg:mx-0 drop-shadow-2xl'>
       <div className='mt-16 mx-4 flex flex-col align-middle justify-center text-center'>
        
           {name == "Design" &&
