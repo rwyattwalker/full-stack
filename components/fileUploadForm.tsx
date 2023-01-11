@@ -114,7 +114,7 @@ const SingleFileUploadForm = () => {
           <h1 className="my-auto mx-auto">Thank you for submitting your job application. We appreciate your interest in joining our team. Your application has been received and will be reviewed by our hiring department. If your qualifications and experience align with the requirements of the position, we will contact you to schedule an interview. We will keep your application on file for future reference as well. Please note that due to a high volume of applications, we may not be able to respond to every candidate. Thank you for your understanding.</h1>
         </div>
         }
-        {!formRes?.url &&
+        {!formRes?.url && !loading &&
           <>
             <div className="mb-4">
               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">

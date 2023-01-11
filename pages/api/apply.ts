@@ -36,9 +36,9 @@ const handler = async (
     const file = files.media;
     // console.log(file, "files(s)")
     let url = Array.isArray(file) ? file.map((f) => f.filepath) : file.filepath;
-    let attachments = Array.isArray(file) ? [] : [{filename: 'resume.pdf', path: file.filepath, contentType: 'application/pdf'}]
+    let attachments = Array.isArray(file) ? [] : [{path: file.filepath}]
     Array.isArray(file) && file.map((e, i)=>{
-      attachments.push({filename: `file${i}.pdf`, path: e.filepath, contentType:'application/pdf'})
+      attachments.push({path: e.filepath})
     })
     transporter.sendMail({
       from: 'fullstaksolutions@outlook.com',

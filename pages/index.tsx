@@ -97,7 +97,7 @@ export default function Home() {
       </section>
       <section className='h-fit bg-[#E8E8E8] flex justify-center'>
         <div className=' bg-[#222222] w-[80%] lg:w-[60%] h-fit my-5'>
-          <form id="#form" className='flex flex-col m-12 gap-4 text-white' onSubmit={handleSubmit}>
+          <form id="#form" className='flex flex-col m-12 gap-4 text-black' onSubmit={handleSubmit}>
             {loading &&
             <div className='h-[391px] flex'>
               <div className='flex my-auto mx-auto'>
@@ -107,7 +107,7 @@ export default function Home() {
            
             }
             {formRes && formRes.success == true && 
-            <div className='h-[391px] flex text-center md:text-left'>
+            <div className='h-[391px] flex text-center md:text-left text-white'>
               <div className='flex-col my-auto'>
                 <h1 className='mx-auto md:ml-0 w-fit font-bold text-5xl mb-2'>Thank you!</h1>
                 <h2 className='my-auto mx-auto w-fit font-bold relative mb-2'>
@@ -127,7 +127,7 @@ export default function Home() {
           }
           {formRes == null && !loading &&
           <>
-            <h1 className='font-bold text-3xl '>Ready to Evolve?</h1>
+            <h1 className='font-bold text-3xl text-white'>Ready to Evolve?</h1>
             <div className='flex flex-col lg:flex-row gap-4'>
               <input type="text" id="fname" onChange={(e)=>handleChange(e,"fname")} name="fname" placeholder=" First Name" className="lg:w-1/3 h-10 rounded-sm"/>
               <input type="text" id="lname" onChange={(e)=>handleChange(e,"lname")} name="lname" placeholder=" Last Name" className="lg:w-1/3 h-10 rounded-sm"/>
@@ -140,7 +140,7 @@ export default function Home() {
             </div>
             
             <textarea style={{color:"black !important"}} rows={6} cols={3} id="message" onChange={(e)=>handleChange(e,"message")} name="message" className='rounded-sm p-2' placeholder="Message" />
-            <div className='flex flex-col sm:flex-row'>
+            <div className='flex flex-col sm:flex-row text-white'>
               Preferred Contact Method:&nbsp;
               <div className='flex'>
                 <input type="radio" id="via_email" onChange={(e)=>handleChange(e,"preferredContact")} value="email" name="fav_contact" />
