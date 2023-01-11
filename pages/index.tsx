@@ -139,7 +139,7 @@ export default function Home() {
               <input type="text" id="phone" onChange={(e)=>handleChange(e,"phone")} name="phone" placeholder=" Phone" className="lg:w-1/3 h-10 rounded-sm"/>
             </div>
             
-            <textarea rows={6} cols={3} id="message" onChange={(e)=>handleChange(e,"message")} name="message" className='rounded-sm p-2' placeholder="Message" />
+            <textarea style={{color:"black !important"}} rows={6} cols={3} id="message" onChange={(e)=>handleChange(e,"message")} name="message" className='rounded-sm p-2' placeholder="Message" />
             <div className='flex flex-col sm:flex-row'>
               Preferred Contact Method:&nbsp;
               <div className='flex'>
