@@ -50,8 +50,11 @@ const handler = async (
         Cover Letter: ${fields.coverLetter}
       `,
       attachments: attachments
+    },(err:any) => {
+      if(err){
+        console.log(err);
+      }
     })
-
     res.status(200).json({
       data: {
         url,
