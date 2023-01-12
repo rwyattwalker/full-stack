@@ -40,7 +40,7 @@ const handler = async (
     Array.isArray(file) && file.map((e, i)=>{
       attachments.push({path: e.filepath})
     })
-    transporter.sendMail({
+    await transporter.sendMail({
       from: 'fullstaksolutions@outlook.com',
       to: 'rwyattwalker@gmail.com',
       subject: 'Resume',
@@ -50,10 +50,6 @@ const handler = async (
         Cover Letter: ${fields.coverLetter}
       `,
       attachments: attachments
-    },(err:any) => {
-      if(err){
-        console.log(err);
-      }
     })
     res.status(200).json({
       data: {
